@@ -16,6 +16,9 @@ export const ToDo = () => {
         }
         }
     }
+
+    const handlerButtomDelete = (indexid) => setTaskList(taskList.filter((tarea , index) => (index != indexid)));
+// factorizando el codigo
         
 return (
     <div className='row mt-5'>
@@ -27,7 +30,15 @@ return (
                         <label for="floatingInput">Tarea por hacer</label>
                             {
                                 taskList.map((tarea, i)=>{
-                                    return ( <h2 key={i} >{tarea}</h2> )
+                                    return (
+                                        <div className="Card card m-1" key={1}>
+                                            <div className="modal-header">
+                                                <h4 className="modal-title"> {tarea}
+                                                    <button type="button" className="btn-close btn-danger" onClick={(event) => handlerButtomDelete(i)}></button>
+                                                </h4>
+                                            </div>
+                                        </div>
+                                )
                                 })
                             }
                     </div>
