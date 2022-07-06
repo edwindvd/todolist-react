@@ -24,18 +24,17 @@ return (
     <div className='row mt-5'>
         <div className='col-3'></div>
             <div className='col-6'>
-                <div className='Card' id="card">
-                    <div className="form-floating mb-3">
-                        <input onChange={handlerTask} value={task} onKeyDown={handlerKeyPress} type="text" className="form-control" id="floatingInput" placeholder="Tasks to do"/>
-                        <label for="floatingInput">Tarea por hacer</label>
+                <div className='Card ' id="card">
+                    <div className="form-floating mb-3 form-control border-primary">
+                        <input onChange={handlerTask} value={task} onKeyDown={handlerKeyPress} type="text" className="form-control text-primary text-opacity-75" id="floatingInput" placeholder="Tasks to do"/>
+                        <label htmlFor="floatingInput" className='text-primary text-opacity-50' >Tarea por hacer </label>
                             {
                                 taskList.map((tarea, i)=>{
                                     return (
                                         <div className="Card card m-1" key={1}>
                                             <div className="modal-header">
-                                                <h4 className="modal-title"> {tarea}
-                                                    <button type="button" className="btn-close btn-danger" onClick={(event) => handlerButtomDelete(i)}></button>
-                                                </h4>
+                                                <h4 className="modal-title text-primary fw-bolder"> {tarea}</h4>
+                                                <button type="button" className="btn-close btn-danger" onClick={(event) => handlerButtomDelete(i)}></button>
                                             </div>
                                         </div>
                                 )
