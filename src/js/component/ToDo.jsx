@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 export const ToDo = () => {
     const [taskList, setTaskList] = useState([]);
     const [task, setTask] = useState("");
+    
     const handlerTask = (event) => {
         setTask(event.target.value)
     }
@@ -34,7 +35,7 @@ return (
                                         <div className="Card card m-1" key={1}>
                                             <div className="modal-header">
                                                 <h4 className="modal-title text-primary fw-bolder"> {tarea}</h4>
-                                                <button type="button" className="btn-close btn-danger" onClick={(event) => handlerButtomDelete(i)}></button>
+                                                <button type="button" className="elem btn-close btn-primary" onClick={(event) => handlerButtomDelete(i)}></button>
                                             </div>
                                         </div>
                                 )
